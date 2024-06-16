@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Modifier</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .gradient-title {
+      background: -webkit-linear-gradient(#eee, #333);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .drop-zone {
+      border: 2px dashed #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .bottom-navbar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f8f9fa;
+      border-top: 1px solid #e7e7e7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="card p-2">
+        <div class="card-header row ">
+          Featured
+          <div class="row">
+            <input type="file" id="fileInput" class="d-none" accept="application/pdf">
+            <input type="text" class="form-control mt-2" id="fileNameDisplay1" placeholder="No file chosen" readonly>
+          </div>
+        </div>
+        <div class="card-body mt-5 ml-5 mr-5 mb-4 ">
+            <div class="row g-2">
+                <div class="col-md">
+                  <div class="">
+                    <input type="text" class="form-control-plaintext outline-none spc "  id="firmasname"   placeholder="Firmasname">
+                    <input type="text" class="form-control-plaintext outline-none spc "   id="firmasadresse"  placeholder="Firmasadresse">
+                    <input type="text" class="form-control-plaintext outline-none spc "   id="firmasadresse1"  placeholder="Firmasadresse">
+                </div>
+                </div>
+                <div class="col-md input-container">
+                  <div class="">
+                    <input type="text" class="form-control-plaintext outline-none spc text-right"  id="vn"  placeholder="Vorname & Nachname">
+                    <input type="text" class="form-control-plaintext outline-none spc text-right"  id="tel"  placeholder="Telefon">
+                    <input type="text" class="form-control-plaintext  form-control-sm outline-none spc text-right"  id="email"  placeholder="Email">
+                    <input type="text" class="form-control-plaintext  form-control-sm outline-none spc text-right" id="ads"   placeholder="Adressse 1">
+                    <input type="text" class="form-control-plaintext  form-control-sm outline-none spc text-right" id="ads1"   placeholder="Adressse 1">
+                  </div>
+                </div>
+            </div>
+           <div class=" mt-5 container">
+            <input type="text" class="form-control-plaintext outline-none spc " id="betreff"  style="font-weight: bold;"   placeholder="Betreff">
+           </div>     
+           <div class=" mt-2 container">
+            <input type="text" class="form-control-plaintext  form-control-sm outline-none spc text-right"  id="brs"  placeholder="Adressse 1">
+
+           </div> 
+           <div class=" mt-2 container">
+            <textarea class="form-control-plaintext spc outline-none  form-control-sm"
+             id="content" rows="5"></textarea>
+           </div> 
+                
+      
+        </div>
+        <div class="card-footer text-body-secondary">
+          <div class="row mt-3">
+            <div class="col-12">
+              <div class="drop-zone" id="dropZone">Drag & Drop PDF Here or Click to Upload</div>
+              <input type="file" id="fileInput" class="d-none" accept="application/pdf">
+              <input type="text" class="form-control mt-2" id="fileNameDisplay1" placeholder="No file chosen" readonly>
+              <button type="button" onclick="modifyPdf()" class="btn btn-primary btn-block btn-lg mt-3">Speichern</button>
+            </div>
+          </div>
+            <button class="btn btn-primary" onclick="modifyPdf()">Download as PDF</button>
+        </div>
+      </div>
+
+  <nav class="navbar bottom-navbar">
+    <div class="container">
+      <button type="button" class="btn btn-info mr-2" onclick="showMainContainer()">dossier</button>
+      <button type="button" class="btn btn-warning" onclick="showSecondaryContainer()">anschreiben</button>
+    </div>
+  </nav>
+
+  <script src="https://unpkg.com/pdf-lib@1.4.0/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.4.0/dist/pdf-lib.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <!-- <script>
+    document.getElementById('dropZone').addEventListener('click', function() {
+      document.getElementById('fileInput').click();
+    });
+
+    function modifyPdf() {
+      // Your PDF modification logic here
+      console.log("Modify PDF");
+    }
+  </script> -->
+</body>
+</html>
